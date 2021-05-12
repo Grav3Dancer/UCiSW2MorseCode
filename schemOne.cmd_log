@@ -1,0 +1,48 @@
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o schemOne_map.ncd schemOne.ngd schemOne.pcf 
+par -w -intstyle ise -ol high -t 1 schemOne_map.ncd schemOne.ncd schemOne.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml schemOne.twx schemOne.ncd -o schemOne.twr schemOne.pcf 
+netgen -intstyle ise -s 4  -pcf schemOne.pcf -rpw 100 -tpw 0 -ar Structure -tm schemOne -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim schemOne.ncd schemOne_timesim.vhd 
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o schemOne_map.ncd schemOne.ngd schemOne.pcf 
+par -w -intstyle ise -ol high -t 1 schemOne_map.ncd schemOne.ncd schemOne.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml schemOne.twx schemOne.ncd -o schemOne.twr schemOne.pcf 
+netgen -intstyle ise -s 4  -pcf schemOne.pcf -rpw 100 -tpw 0 -ar Structure -tm schemOne -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim schemOne.ncd schemOne_timesim.vhd 
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o schemOne_map.ncd schemOne.ngd schemOne.pcf 
+par -w -intstyle ise -ol high -t 1 schemOne_map.ncd schemOne.ncd schemOne.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml schemOne.twx schemOne.ncd -o schemOne.twr schemOne.pcf 
+netgen -intstyle ise -s 4  -pcf schemOne.pcf -rpw 100 -tpw 0 -ar Structure -tm schemOne -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim schemOne.ncd schemOne_timesim.vhd 
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o schemOne_map.ncd schemOne.ngd schemOne.pcf 
+par -w -intstyle ise -ol high -t 1 schemOne_map.ncd schemOne.ncd schemOne.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml schemOne.twx schemOne.ncd -o schemOne.twr schemOne.pcf 
+netgen -intstyle ise -s 4  -pcf schemOne.pcf -rpw 100 -tpw 0 -ar Structure -tm schemOne -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim schemOne.ncd schemOne_timesim.vhd 
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o schemOne_map.ncd schemOne.ngd schemOne.pcf 
+par -w -intstyle ise -ol high -t 1 schemOne_map.ncd schemOne.ncd schemOne.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml schemOne.twx schemOne.ncd -o schemOne.twr schemOne.pcf 
+netgen -intstyle ise -s 4  -pcf schemOne.pcf -rpw 100 -tpw 0 -ar Structure -tm schemOne -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim schemOne.ncd schemOne_timesim.vhd 
+netgen -intstyle ise -ar Structure -tm schemOne -w -dir netgen/synthesis -ofmt vhdl -sim schemOne.ngc schemOne_synthesis.vhd 
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o schemOne_map.ncd schemOne.ngd schemOne.pcf 
+par -w -intstyle ise -ol high -t 1 schemOne_map.ncd schemOne.ncd schemOne.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml schemOne.twx schemOne.ncd -o schemOne.twr schemOne.pcf 
+netgen -intstyle ise -s 4  -pcf schemOne.pcf -rpw 100 -tpw 0 -ar Structure -tm schemOne -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim schemOne.ncd schemOne_timesim.vhd 
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 
+netgen -intstyle ise -ar Structure -tm schemOne -w -dir netgen/synthesis -ofmt vhdl -sim schemOne.ngc schemOne_synthesis.vhd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 schemOne.ngc schemOne.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o schemOne_map.ncd schemOne.ngd schemOne.pcf 
+par -w -intstyle ise -ol high -t 1 schemOne_map.ncd schemOne.ncd schemOne.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml schemOne.twx schemOne.ncd -o schemOne.twr schemOne.pcf 
+netgen -intstyle ise -s 4  -pcf schemOne.pcf -rpw 100 -tpw 0 -ar Structure -tm schemOne -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim schemOne.ncd schemOne_timesim.vhd 
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 
+xst -intstyle ise -ifn "F:/XilinxProjects/u2proj/schemOne.xst" -ofn "F:/XilinxProjects/u2proj/schemOne.syr" 

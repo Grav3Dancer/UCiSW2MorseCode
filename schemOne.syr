@@ -1,0 +1,510 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: schemOne.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "schemOne.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "schemOne"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : schemOne
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "F:/XilinxProjects/u2proj/SawSignal.vhd" in Library work.
+Architecture behavioral of Entity sawsignal is up to date.
+Compiling vhdl file "F:/XilinxProjects/u2proj/SendChar.vhd" in Library work.
+Entity <sendchar> compiled.
+Entity <sendchar> (Architecture <behavioral>) compiled.
+Compiling vhdl file "F:/XilinxProjects/u2proj/schemOne.vhf" in Library work.
+Architecture behavioral of Entity schemone is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <schemOne> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <SawSignal> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <SendChar> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <schemOne> in library <work> (Architecture <behavioral>).
+Entity <schemOne> analyzed. Unit <schemOne> generated.
+
+Analyzing Entity <SawSignal> in library <work> (Architecture <behavioral>).
+Entity <SawSignal> analyzed. Unit <SawSignal> generated.
+
+Analyzing Entity <SendChar> in library <work> (Architecture <behavioral>).
+WARNING:Xst:790 - "F:/XilinxProjects/u2proj/SendChar.vhd" line 178: Index value(s) does not match array range, simulation mismatch.
+Entity <SendChar> analyzed. Unit <SendChar> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <SawSignal>.
+    Related source file is "F:/XilinxProjects/u2proj/SawSignal.vhd".
+    Found 6-bit up counter for signal <counter>.
+    Found 1-bit register for signal <sendStart>.
+    Found 11-bit up counter for signal <timeCnt>.
+    Found 12-bit up accumulator for signal <x>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 Accumulator(s).
+	inferred   1 D-type flip-flop(s).
+Unit <SawSignal> synthesized.
+
+
+Synthesizing Unit <SendChar>.
+    Related source file is "F:/XilinxProjects/u2proj/SendChar.vhd".
+WARNING:Xst:646 - Signal <symbolState> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32x19-bit ROM for signal <$rom0000>.
+    Found 5-bit adder for signal <$sub0000> created at line 185.
+    Found 1-bit register for signal <ending>.
+    Found 1-bit register for signal <sending>.
+    Found 1-bit register for signal <sendOut>.
+    Found 6-bit comparator not equal for signal <sendOut$cmp_ne0000> created at line 185.
+    Found 8-bit register for signal <symbol>.
+    Found 15-bit register for signal <symbolCode>.
+    Found 1-bit 15-to-1 multiplexer for signal <symbolCode$mux0001> created at line 178.
+    Found 4-bit down counter for signal <symbolCount>.
+    Found 6-bit adder for signal <symbolCount$add0000> created at line 185.
+    Found 6-bit comparator equal for signal <symbolCount$cmp_eq0000> created at line 185.
+    Found 4-bit register for signal <symbolLen>.
+    Found 24-bit up counter for signal <unitCount>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   2 Counter(s).
+	inferred  30 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <SendChar> synthesized.
+
+
+Synthesizing Unit <schemOne>.
+    Related source file is "F:/XilinxProjects/u2proj/schemOne.vhf".
+Unit <schemOne> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 32x19-bit ROM                                         : 1
+# Adders/Subtractors                                   : 2
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 4
+ 11-bit up counter                                     : 1
+ 24-bit up counter                                     : 1
+ 4-bit down counter                                    : 1
+ 6-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 12-bit up accumulator                                 : 1
+# Registers                                            : 7
+ 1-bit register                                        : 4
+ 15-bit register                                       : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 2
+ 6-bit comparator equal                                : 1
+ 6-bit comparator not equal                            : 1
+# Multiplexers                                         : 1
+ 1-bit 15-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <SendChar>.
+INFO:Xst:3044 - The ROM <Mrom__rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <symbol>.
+INFO:Xst:3225 - The RAM <Mrom__rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 19-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     enA            | connected to signal <SendStart>     | high     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <CharInput>     |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <SendChar> synthesized (advanced).
+WARNING:Xst:2677 - Node <symbol_0> of sequential type is unconnected in block <SendChar>.
+WARNING:Xst:2677 - Node <symbol_1> of sequential type is unconnected in block <SendChar>.
+WARNING:Xst:2677 - Node <symbol_2> of sequential type is unconnected in block <SendChar>.
+WARNING:Xst:2677 - Node <symbol_3> of sequential type is unconnected in block <SendChar>.
+WARNING:Xst:2677 - Node <symbol_4> of sequential type is unconnected in block <SendChar>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x19-bit single-port block RAM                       : 1
+# Adders/Subtractors                                   : 2
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 4
+ 11-bit up counter                                     : 1
+ 24-bit up counter                                     : 1
+ 4-bit down counter                                    : 1
+ 6-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 12-bit up accumulator                                 : 1
+# Registers                                            : 26
+ Flip-Flops                                            : 26
+# Comparators                                          : 2
+ 6-bit comparator equal                                : 1
+ 6-bit comparator not equal                            : 1
+# Multiplexers                                         : 1
+ 1-bit 15-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <x_0> has a constant value of 0 in block <SawSignal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <x_1> has a constant value of 0 in block <SawSignal>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <schemOne> ...
+
+Optimizing unit <SawSignal> ...
+
+Optimizing unit <SendChar> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block schemOne, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 81
+ Flip-Flops                                            : 81
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : schemOne.ngr
+Top Level Output File Name         : schemOne
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 42
+
+Cell Usage :
+# BELS                             : 210
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 42
+#      LUT2                        : 24
+#      LUT3                        : 13
+#      LUT3_D                      : 1
+#      LUT3_L                      : 2
+#      LUT4                        : 17
+#      LUT4_D                      : 4
+#      MUXCY                       : 48
+#      MUXF5                       : 4
+#      MUXF6                       : 2
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 45
+# FlipFlops/Latches                : 81
+#      FDE                         : 29
+#      FDRE                        : 51
+#      FDSE                        : 1
+# RAMS                             : 1
+#      RAMB16_S36                  : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 41
+#      IBUF                        : 18
+#      OBUF                        : 23
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       57  out of   4656     1%  
+ Number of Slice Flip Flops:             81  out of   9312     0%  
+ Number of 4 input LUTs:                108  out of   9312     1%  
+ Number of IOs:                          42
+ Number of bonded IOBs:                  42  out of    232    18%  
+ Number of BRAMs:                         1  out of     20     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk_50MHz                          | BUFGP                  | 82    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.655ns (Maximum Frequency: 150.263MHz)
+   Minimum input arrival time before clock: 6.110ns
+   Maximum output required time after clock: 5.124ns
+   Maximum combinational path delay: 4.910ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk_50MHz'
+  Clock period: 6.655ns (frequency: 150.263MHz)
+  Total number of paths / destination ports: 1993 / 175
+-------------------------------------------------------------------------
+Delay:               6.655ns (Levels of Logic = 8)
+  Source:            XLXI_6/unitCount_6 (FF)
+  Destination:       XLXI_6/unitCount_23 (FF)
+  Source Clock:      Clk_50MHz rising
+  Destination Clock: Clk_50MHz rising
+
+  Data Path: XLXI_6/unitCount_6 to XLXI_6/unitCount_23
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.591   0.622  XLXI_6/unitCount_6 (XLXI_6/unitCount_6)
+     LUT4:I0->O            1   0.704   0.000  XLXI_6/unitCount_cmp_eq0000_wg_lut<0> (XLXI_6/unitCount_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_6/unitCount_cmp_eq0000_wg_cy<0> (XLXI_6/unitCount_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_6/unitCount_cmp_eq0000_wg_cy<1> (XLXI_6/unitCount_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_6/unitCount_cmp_eq0000_wg_cy<2> (XLXI_6/unitCount_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_6/unitCount_cmp_eq0000_wg_cy<3> (XLXI_6/unitCount_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_6/unitCount_cmp_eq0000_wg_cy<4> (XLXI_6/unitCount_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           5   0.459   0.712  XLXI_6/unitCount_cmp_eq0000_wg_cy<5> (XLXI_6/unitCount_cmp_eq0000)
+     LUT2:I1->O           24   0.704   1.252  XLXI_6/symbolCount_not00011 (XLXI_6/symbolCount_not0001)
+     FDRE:R                    0.911          XLXI_6/unitCount_0
+    ----------------------------------------
+    Total                      6.655ns (4.069ns logic, 2.586ns route)
+                                       (61.1% logic, 38.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk_50MHz'
+  Total number of paths / destination ports: 87 / 87
+-------------------------------------------------------------------------
+Offset:              6.110ns (Levels of Logic = 3)
+  Source:            SawStart (PAD)
+  Destination:       XLXI_5/timeCnt_10 (FF)
+  Destination Clock: Clk_50MHz rising
+
+  Data Path: SawStart to XLXI_5/timeCnt_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.218   1.158  SawStart_IBUF (SawStart_IBUF)
+     LUT4_D:I0->O          2   0.704   0.482  XLXI_5/counter_and00001_SW0_SW0 (N10)
+     LUT4:I2->O           11   0.704   0.933  XLXI_5/counter_and00001 (XLXI_5/counter_not0001)
+     FDRE:R                    0.911          XLXI_5/timeCnt_0
+    ----------------------------------------
+    Total                      6.110ns (3.537ns logic, 2.573ns route)
+                                       (57.9% logic, 42.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk_50MHz'
+  Total number of paths / destination ports: 13 / 13
+-------------------------------------------------------------------------
+Offset:              5.124ns (Levels of Logic = 1)
+  Source:            XLXI_6/sending (FF)
+  Destination:       CharBUSY (PAD)
+  Source Clock:      Clk_50MHz rising
+
+  Data Path: XLXI_6/sending to CharBUSY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDSE:C->Q            29   0.591   1.261  XLXI_6/sending (XLXI_6/sending)
+     OBUF:I->O                 3.272          CharBUSY_OBUF (CharBUSY)
+    ----------------------------------------
+    Total                      5.124ns (3.863ns logic, 1.261ns route)
+                                       (75.4% logic, 24.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               4.910ns (Levels of Logic = 2)
+  Source:            SawAddr<3> (PAD)
+  Destination:       DwrAddr<3> (PAD)
+
+  Data Path: SawAddr<3> to DwrAddr<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  SawAddr_3_IBUF (SawAddr_3_IBUF)
+     OBUF:I->O                 3.272          DwrAddr_3_OBUF (DwrAddr<3>)
+    ----------------------------------------
+    Total                      4.910ns (4.490ns logic, 0.420ns route)
+                                       (91.4% logic, 8.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.41 secs
+ 
+--> 
+
+Total memory usage is 4492308 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

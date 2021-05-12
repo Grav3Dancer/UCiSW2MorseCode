@@ -1,0 +1,4 @@
+vhdl work "SendChar.vhd"
+vhdl work "SawSignal.vhd"
+vhdl work "schemOne.vhf"
+vhdl work "SawTest2.vhd"

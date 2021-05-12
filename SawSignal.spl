@@ -1,0 +1,11 @@
+[Inputs]
+Clk
+Start
+=Addr[3:0]=
+=Cmd[3:0]=
+[Outputs]
+DWR_Start
+=DWR_Addr[3:0]=
+=DWR_Cmd[3:0]=
+=DWR_Data[11:0]=
+[BiDir]

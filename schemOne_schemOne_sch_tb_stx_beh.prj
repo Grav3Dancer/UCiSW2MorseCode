@@ -1,0 +1,4 @@
+vhdl isim_temp "SendChar.vhd"
+vhdl isim_temp "SawSignal.vhd"
+vhdl isim_temp "schemOne.vhf"
+vhdl isim_temp "SawTest2.vhd"

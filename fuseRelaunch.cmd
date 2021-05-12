@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "F:/XilinxProjects/u2proj/schemOne_schemOne_sch_tb_isim_par.exe" -prj "F:/XilinxProjects/u2proj/schemOne_schemOne_sch_tb_par.prj" "work.schemOne_schemOne_sch_tb" 
