@@ -1,0 +1,5 @@
+set -tmpdir "F:/XilinxProjects/u2proj/xst/projnav.tmp"
+set -xsthdpdir "F:/XilinxProjects/u2proj/xst"
+elaborate
+-ifn SawSignal.prj
+-ifmt mixed

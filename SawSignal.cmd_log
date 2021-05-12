@@ -1,0 +1,2 @@
+vhdtdtfi -lib work SawSignal.vhd -prj u2proj -o SawSignal.spl -module SawSignal -template F:/Xilinx_14.7/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e SawSignal.spl F:/XilinxProjects/u2proj/SawSignal.sym 
