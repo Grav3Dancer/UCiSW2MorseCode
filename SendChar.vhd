@@ -26,12 +26,17 @@ entity SendChar is
           CLK        : in    std_logic; 
           SendStart  : in    std_logic; 
           CharOutput : out   std_logic; 
-          SendBusy   : out   std_logic);
+          SendBusy   : out   std_logic; 
+			 CharOutputVector : out   std_logic_vector (7 downto 0); 
+			 CharOut		: out	  std_logic);
 end SendChar;
 
 architecture BEHAVIORAL of SendChar is
 --
 type state_type is (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, Non);
+type dote_state is (zero, zeroOne, zeroOneZero, Non);
+type dash_state is (zero, zeroOne, zeroOneOne, zeroOneOneOne, zeroOneOneOneZero, Non);
+type space_spate is (zero, zeroZero, zeroZeroZero, Non);
 
 signal symbolState : state_type;
 signal symbolLen : UNSIGNED(3 downto 0) := "0000";
@@ -191,14 +196,12 @@ begin
 		end if;
 	end if;
 	
-	
-
 end process send_process;
 
+send_dot_dasht_process: process(CLK)
+begin
 
-
-
-
+end process send_dot_dasht_process;
 SendBusy <= sending;
 CharOutput <= sendOut;
 

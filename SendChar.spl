@@ -1,0 +1,10 @@
+[Inputs]
+CLK
+SendStart
+=CharInput[7:0]=
+[Outputs]
+CharOutput
+SendBusy
+CharOut
+=CharOutputVector[7:0]=
+[BiDir]

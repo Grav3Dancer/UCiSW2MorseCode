@@ -1,0 +1,2 @@
+vhdtdtfi -lib work SendChar.vhd -prj u2proj -o SendChar.spl -module SendChar -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e SendChar.spl C:/Users/Hyperbook/Desktop/UCISW/u2proj/SendChar.sym 

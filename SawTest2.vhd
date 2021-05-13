@@ -30,6 +30,11 @@ ARCHITECTURE behavioral OF schemOne_schemOne_sch_tb IS
           DwrAddr	:	OUT	STD_LOGIC_VECTOR (3 DOWNTO 0); 
           DwrCmd	:	OUT	STD_LOGIC_VECTOR (3 DOWNTO 0); 
           DwrStart	:	OUT	STD_LOGIC; 
+			 NewLine	:	OUT	STD_LOGIC; 
+			 VGA_HS	:	OUT	STD_LOGIC; 
+			 VGA_VS	:	OUT	STD_LOGIC; 
+			 VGA_RGB	:	OUT	STD_LOGIC; 
+			 Busy		:	OUT	STD_LOGIC; 
           CharBUSY	:	OUT	STD_LOGIC; 
           CharOUT	:	OUT	STD_LOGIC; 
           CharStart	:	IN	STD_LOGIC; 
@@ -44,6 +49,11 @@ ARCHITECTURE behavioral OF schemOne_schemOne_sch_tb IS
    SIGNAL DwrAddr	:	STD_LOGIC_VECTOR (3 DOWNTO 0);
    SIGNAL DwrCmd	:	STD_LOGIC_VECTOR (3 DOWNTO 0);
    SIGNAL DwrStart	:	STD_LOGIC;
+	SIGNAL NewLine			:	STD_LOGIC;
+	SIGNAL VGA_HS	:	STD_LOGIC; 
+	SIGNAL VGA_VS	:	STD_LOGIC; 
+	SIGNAL VGA_RGB	:	STD_LOGIC; 
+	SIGNAL Busy		:	STD_LOGIC; 	
    SIGNAL CharBUSY	:	STD_LOGIC;
    SIGNAL CharOUT	:	STD_LOGIC;
    SIGNAL CharStart	:	STD_LOGIC;
@@ -60,6 +70,7 @@ BEGIN
 		DwrAddr => DwrAddr, 
 		DwrCmd => DwrCmd, 
 		DwrStart => DwrStart, 
+		NewLine => NewLine,
 		CharBUSY => CharBUSY, 
 		CharOUT => CharOUT, 
 		CharStart => CharStart, 

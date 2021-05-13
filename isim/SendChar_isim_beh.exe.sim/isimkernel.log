@@ -1,0 +1,29 @@
+Command line:
+   SendChar_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  55422
+
+Wed May 12 20:32:22 2021
+
+
+ Elaboration Time: 0.015625 sec
+
+ Current Memory Usage: 5151.51 Meg
+
+ Total Signals          : 39
+ Total Nets             : 96
+ Total Signal Drivers   : 11
+ Total Blocks           : 4
+ Total Primitive Blocks : 4
+ Total Processes        : 4
+ Total Traceable Variables  : 13
+ Total Scalar Nets and Variables : 579
+Total Line Count : 101
+
+ Total Simulation Time: 0.140625 sec
+
+ Current Memory Usage: 5466.09 Meg
+
+Wed May 12 20:33:18 2021
+

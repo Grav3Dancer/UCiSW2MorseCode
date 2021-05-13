@@ -1,5 +1,5 @@
-set -tmpdir "F:/XilinxProjects/u2proj/xst/projnav.tmp"
-set -xsthdpdir "F:/XilinxProjects/u2proj/xst"
+set -tmpdir "C:/Users/Hyperbook/Desktop/UCISW/u2proj/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Hyperbook/Desktop/UCISW/u2proj/xst"
 elaborate
 -ifn SendChar.prj
 -ifmt mixed

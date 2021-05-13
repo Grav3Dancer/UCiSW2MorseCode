@@ -1,0 +1,29 @@
+Command line:
+   schemOne_schemOne_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  56954
+
+Wed Apr 28 22:14:36 2021
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 4688.41 Meg
+
+ Total Signals          : 75
+ Total Nets             : 156
+ Total Signal Drivers   : 25
+ Total Blocks           : 7
+ Total Primitive Blocks : 5
+ Total Processes        : 14
+ Total Traceable Variables  : 13
+ Total Scalar Nets and Variables : 639
+Total Line Count : 127
+
+ Total Simulation Time: 0.515625 sec
+
+ Current Memory Usage: 5002.98 Meg
+
+Wed Apr 28 22:15:13 2021
+
