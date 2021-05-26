@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : schemOne.vhf
--- /___/   /\     Timestamp : 04/28/2021 19:46:16
+-- /___/   /\     Timestamp : 05/13/2021 10:43:54
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -37,10 +37,23 @@ entity schemOne is
           DwrAddr   : out   std_logic_vector (3 downto 0); 
           DwrCmd    : out   std_logic_vector (3 downto 0); 
           DwrData   : out   std_logic_vector (11 downto 0); 
-          DwrStart  : out   std_logic);
+          DwrStart  : out   std_logic; 
+          VGA_Busy  : out   std_logic; 
+          VGA_HS    : out   std_logic; 
+          VGA_RGB   : out   std_logic; 
+          VGA_VS    : out   std_logic);
 end schemOne;
 
 architecture BEHAVIORAL of schemOne is
+   attribute BOX_TYPE   : string ;
+   signal XLXN_2    : std_logic_vector (7 downto 0);
+   signal XLXN_3    : std_logic;
+   signal XLXN_4    : std_logic;
+   signal XLXN_5    : std_logic;
+   signal XLXN_6    : std_logic;
+   signal XLXN_8    : std_logic;
+   signal XLXN_9    : std_logic;
+   signal XLXN_10   : std_logic;
    component SawSignal
       port ( Clk       : in    std_logic; 
              Start     : in    std_logic; 
@@ -53,12 +66,41 @@ architecture BEHAVIORAL of schemOne is
    end component;
    
    component SendChar
-      port ( CharInput  : in    std_logic_vector (7 downto 0); 
-             SendStart  : in    std_logic; 
-             CLK        : in    std_logic; 
-             CharOutput : out   std_logic; 
-             SendBusy   : out   std_logic);
+      port ( CharInput        : in    std_logic_vector (7 downto 0); 
+             SendStart        : in    std_logic; 
+             CLK              : in    std_logic; 
+             CharOutput       : out   std_logic; 
+             SendBusy         : out   std_logic; 
+             CharOutputVector : out   std_logic_vector (7 downto 0); 
+             CharOut          : out   std_logic);
    end component;
+   
+   component VGAtxt48x20
+      port ( Char_DI     : in    std_logic_vector (7 downto 0); 
+             Home        : in    std_logic; 
+             NewLine     : in    std_logic; 
+             Goto00      : in    std_logic; 
+             Clk_Sys     : in    std_logic; 
+             Clk_50MHz   : in    std_logic; 
+             CursorOn    : in    std_logic; 
+             ScrollEn    : in    std_logic; 
+             ScrollClear : in    std_logic; 
+             Busy        : out   std_logic; 
+             VGA_HS      : out   std_logic; 
+             VGA_VS      : out   std_logic; 
+             VGA_RGB     : out   std_logic; 
+             Char_WE     : in    std_logic);
+   end component;
+   
+   component VCC
+      port ( P : out   std_logic);
+   end component;
+   attribute BOX_TYPE of VCC : component is "BLACK_BOX";
+   
+   component GND
+      port ( G : out   std_logic);
+   end component;
+   attribute BOX_TYPE of GND : component is "BLACK_BOX";
    
 begin
    XLXI_5 : SawSignal
@@ -75,8 +117,44 @@ begin
       port map (CharInput(7 downto 0)=>CharIn(7 downto 0),
                 CLK=>Clk_50MHz,
                 SendStart=>CharStart,
+                CharOut=>XLXN_3,
                 CharOutput=>CharOUT,
+                CharOutputVector(7 downto 0)=>XLXN_2(7 downto 0),
                 SendBusy=>CharBUSY);
+   
+   XLXI_8 : VGAtxt48x20
+      port map (Char_DI(7 downto 0)=>XLXN_2(7 downto 0),
+                Char_WE=>XLXN_3,
+                Clk_Sys=>Clk_50MHz,
+                Clk_50MHz=>Clk_50MHz,
+                CursorOn=>XLXN_4,
+                Goto00=>XLXN_8,
+                Home=>XLXN_10,
+                NewLine=>XLXN_9,
+                ScrollClear=>XLXN_6,
+                ScrollEn=>XLXN_5,
+                Busy=>VGA_Busy,
+                VGA_HS=>VGA_HS,
+                VGA_RGB=>VGA_RGB,
+                VGA_VS=>VGA_VS);
+   
+   XLXI_9 : VCC
+      port map (P=>XLXN_4);
+   
+   XLXI_10 : VCC
+      port map (P=>XLXN_5);
+   
+   XLXI_11 : VCC
+      port map (P=>XLXN_6);
+   
+   XLXI_13 : GND
+      port map (G=>XLXN_8);
+   
+   XLXI_14 : GND
+      port map (G=>XLXN_9);
+   
+   XLXI_15 : GND
+      port map (G=>XLXN_10);
    
 end BEHAVIORAL;
 

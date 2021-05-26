@@ -1,4 +1,6 @@
+vhdl work "VGAtxt48x20.vhd"
 vhdl work "SendChar.vhd"
 vhdl work "SawSignal.vhd"
+vhdl work "VGAscan.vhd"
 vhdl work "schemOne.vhf"
-vhdl work "SawTest2.vhd"
+vhdl work "test3.vhd"

@@ -1,4 +1,6 @@
+vhdl isim_temp "VGAtxt48x20.vhd"
 vhdl isim_temp "SendChar.vhd"
 vhdl isim_temp "SawSignal.vhd"
+vhdl isim_temp "VGAscan.vhd"
 vhdl isim_temp "schemOne.vhf"
-vhdl isim_temp "SawTest2.vhd"
+vhdl isim_temp "test3.vhd"

@@ -1,6 +1,6 @@
-AR sendchar behavioral F:/XilinxProjects/u2proj/SendChar.vhd sub00/vhpl05 1619684432
+AR sendchar behavioral F:/XilinxProjects/u2proj/SendChar.vhd sub00/vhpl05 1620894483
 AR sawsignal behavioral F:/XilinxProjects/u2proj/SawSignal.vhd sub00/vhpl01 1619684430
 AR schemone behavioral F:/XilinxProjects/u2proj/schemOne.vhf sub00/vhpl03 1619684434
 EN schemone NULL F:/XilinxProjects/u2proj/schemOne.vhf sub00/vhpl02 1619684433
-EN sendchar NULL F:/XilinxProjects/u2proj/SendChar.vhd sub00/vhpl04 1619684431
+EN sendchar NULL F:/XilinxProjects/u2proj/SendChar.vhd sub00/vhpl04 1620894482
 EN sawsignal NULL F:/XilinxProjects/u2proj/SawSignal.vhd sub00/vhpl00 1619684429

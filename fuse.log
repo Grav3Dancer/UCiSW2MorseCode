@@ -1,41 +1,63 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "F:/XilinxProjects/u2proj/schemOne_schemOne_sch_tb_isim_par.exe" -prj "F:/XilinxProjects/u2proj/schemOne_schemOne_sch_tb_par.prj" "work.schemOne_schemOne_sch_tb" 
+Running: F:\Xilinx_14.7\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o F:/XilinxProjects/u2proj/schemOne_schemOne_sch_tb_isim_beh.exe -prj F:/XilinxProjects/u2proj/schemOne_schemOne_sch_tb_beh.prj work.schemOne_schemOne_sch_tb 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "F:/XilinxProjects/u2proj/netgen/par/schemOne_timesim.vhd" into library work
-Parsing VHDL file "F:/XilinxProjects/u2proj/SawTest2.vhd" into library work
+Parsing VHDL file "F:/XilinxProjects/u2proj/VGAtxt48x20.vhd" into library work
+Parsing VHDL file "F:/XilinxProjects/u2proj/SendChar.vhd" into library work
+Parsing VHDL file "F:/XilinxProjects/u2proj/SawSignal.vhd" into library work
+Parsing VHDL file "F:/XilinxProjects/u2proj/VGAscan.vhd" into library work
+Parsing VHDL file "F:/XilinxProjects/u2proj/schemOne.vhf" into library work
+Parsing VHDL file "F:/XilinxProjects/u2proj/test3.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
 Compiling package vcomponents
+Compiling architecture behavioral of entity SawSignal [sawsignal_default]
+Compiling architecture behavioral of entity SendChar [sendchar_default]
 Compiling package textio
 Compiling package vital_timing
-Compiling package vcomponents
 Compiling package vital_primitives
-Compiling package vpackage
-Compiling architecture x_zero_v of entity X_ZERO [\X_ZERO("UNPLACED")(1,8)\]
-Compiling architecture x_one_v of entity X_ONE [\X_ONE("UNPLACED")(1,8)\]
-Compiling architecture x_buf_v of entity X_BUF [\X_BUF(true,true,"UNPLACED",(0,0...]
-Compiling architecture x_xor2_v of entity X_XOR2 [\X_XOR2(true,true,"UNPLACED",(0,...]
-Compiling architecture x_mux2_v of entity X_MUX2 [\X_MUX2(true,true,"UNPLACED",(0,...]
-Compiling architecture x_and2_v of entity X_AND2 [\X_AND2(true,true,"UNPLACED",(0,...]
-Compiling architecture x_obuf_v of entity X_OBUF [\X_OBUF(true,true,"DONT_CARE",12...]
-Compiling architecture x_ff_v of entity X_FF [\X_FF(true,true,true,"UNPLACED",...]
-Compiling architecture x_lut4_v of entity X_LUT4 [\X_LUT4(true,true,"UNPLACED",(0,...]
-Compiling architecture x_sff_v of entity X_SFF [\X_SFF(true,true,true,"UNPLACED"...]
-Compiling architecture x_inv_v of entity X_INV [\X_INV(true,true,"SLICE_X64Y55",...]
-Compiling architecture x_ramb16_s36_v of entity X_RAMB16_S36 [\X_RAMB16_S36(true,true,true,"UN...]
-Compiling architecture x_bufgmux_v of entity X_BUFGMUX [\X_BUFGMUX(true,"*",true,false,"...]
-Compiling architecture x_roc_v of entity X_ROC [\X_ROC("UNPLACED",100000,"*")(1,...]
-Compiling architecture x_toc_v of entity X_TOC [\X_TOC("UNPLACED",0,"*")(1,8,1,1...]
-Compiling architecture structure of entity schemOne [schemone_default]
+Compiling package vpkg
+Compiling architecture fd_v of entity FD [\FD('0')\]
+Compiling architecture lut2_v of entity LUT2 [\LUT2("0110")(0,3)\]
+Compiling architecture muxcy_v of entity MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity XORCY [xorcy_default]
+Compiling architecture lut4_v of entity LUT4 [\LUT4("1001000000001001")(0,15)\]
+Compiling architecture vcc_v of entity VCC [vcc_default]
+Compiling architecture or2_v of entity OR2 [or2_default]
+Compiling architecture gnd_v of entity GND [gnd_default]
+Compiling architecture fde_v of entity FDE [\FDE('0')\]
+Compiling architecture fdre_v of entity FDRE [\FDRE('0')\]
+Compiling architecture fdr_v of entity FDR [\FDR('0')\]
+Compiling architecture fdse_v of entity FDSE [\FDSE('0')\]
+Compiling architecture muxf5_v of entity MUXF5 [muxf5_default]
+Compiling architecture muxf6_v of entity MUXF6 [muxf6_default]
+Compiling architecture and2_v of entity AND2 [and2_default]
+Compiling architecture xor2_v of entity XOR2 [xor2_default]
+Compiling architecture lut3_v of entity LUT3 [\LUT3("01101010")(0,7)\]
+Compiling architecture lut1_v of entity LUT1 [\LUT1("0010")(0,3)\]
+Compiling architecture inv_v of entity INV [inv_default]
+Compiling architecture ramb16_s9_v of entity RAMB16_S9 [\RAMB16_S9("000000000000","00000...]
+Compiling architecture ramb16_s9_s9_v of entity RAMB16_S9_S9 [\RAMB16_S9_S9:schemone_schemone_...]
+Compiling architecture lut2_l_v of entity LUT2_L [\LUT2_L("1101")(0,3)\]
+Compiling architecture lut4_l_v of entity LUT4_L [\LUT4_L("0100000000000000")(0,15...]
+Compiling architecture lut3_l_v of entity LUT3_L [\LUT3_L("11111101")(0,7)\]
+Compiling architecture lut4_d_v of entity LUT4_D [\LUT4_D("0100000000000000")(0,15...]
+Compiling architecture srl16_v of entity SRL16 [\SRL16("0000000000000000")(0,15)...]
+Compiling architecture muxf5_l_v of entity MUXF5_L [muxf5_l_default]
+Compiling architecture and3b1_v of entity AND3B1 [and3b1_default]
+Compiling architecture and3_v of entity AND3 [and3_default]
+Compiling architecture structure of entity VGAtxt48x20 [\VGAtxt48x20:schemone_schemone_s...]
+Compiling architecture behavioral of entity schemOne [\schemOne:schemone_schemone_sch_...]
+Compiling architecture simulational of entity VGAscan [\VGAscan(800,600,56,37,1040,666,...]
 Compiling architecture behavioral of entity schemone_schemone_sch_tb
 Time Resolution for simulation is 1ps.
-WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: System nie mo¿e odnale æ okre lonej  cie¿ki, "isim\schemOne_schemOne_sch_tb_isim_par.exe.sim\libPortability.dll".
-Compiled 772 VHDL Units
-Built simulation executable F:/XilinxProjects/u2proj/schemOne_schemOne_sch_tb_isim_par.exe
-Fuse Memory Usage: 107744 KB
-Fuse CPU Usage: 3687 ms
+Waiting for 1 sub-compilation(s) to finish...
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: System nie mo¿e odnale æ okre lonej  cie¿ki, "isim\schemOne_schemOne_sch_tb_isim_beh.exe.sim\libPortability.dll".
+Compiled 237 VHDL Units
+Built simulation executable F:/XilinxProjects/u2proj/schemOne_schemOne_sch_tb_isim_beh.exe
+Fuse Memory Usage: 85204 KB
+Fuse CPU Usage: 2436 ms

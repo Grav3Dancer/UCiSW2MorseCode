@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="SendChar">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2021-4-28T15:29:23</timestamp>
+    <timestamp>2021-5-13T8:22:55</timestamp>
     <pin polarity="Input" x="0" y="-160" name="CharInput(7:0)" />
     <pin polarity="Input" x="0" y="-96" name="SendStart" />
     <pin polarity="Input" x="0" y="-32" name="CLK" />
     <pin polarity="Output" x="384" y="-160" name="CharOutput" />
     <pin polarity="Output" x="384" y="-96" name="SendBusy" />
+    <pin polarity="Output" x="384" y="-48" name="CharOutputVector(7:0)" />
+    <pin polarity="Output" x="384" y="-16" name="CharOut" />
     <graph>
         <rect width="256" x="64" y="-192" height="192" />
         <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-200" type="symbol" />
@@ -20,6 +22,10 @@
         <line x2="384" y1="-160" y2="-160" x1="320" />
         <attrtext style="alignment:RIGHT;fontsize:20;fontname:Arial" attrname="PinName" x="312" y="-160" type="pin CharOutput" />
         <line x2="384" y1="-96" y2="-96" x1="320" />
-        <attrtext style="alignment:RIGHT;fontsize:20;fontname:Arial" attrname="PinName" x="312" y="-96" type="pin SendBusy" />
+        <attrtext style="alignment:RIGHT;fontsize:20;fontname:Arial" attrname="PinName" x="308" y="-96" type="pin SendBusy" />
+        <line x2="320" y1="-48" y2="-48" x1="384" />
+        <line x2="320" y1="-16" y2="-16" x1="384" />
+        <attrtext attrname="PinName" x="232" y="-16" type="pin CharOut" />
+        <attrtext attrname="PinName" x="160" y="-48" type="pin CharOutputVector(7:0)" />
     </graph>
 </symbol>

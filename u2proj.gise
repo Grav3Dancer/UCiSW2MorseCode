@@ -45,10 +45,7 @@
       <branch xil_pn:name="BehavioralSim"/>
       <branch xil_pn:name="PostRouteSimulation"/>
     </file>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log">
-      <branch xil_pn:name="BehavioralSim"/>
-      <branch xil_pn:name="PostRouteSimulation"/>
-    </file>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
     <file xil_pn:branch="PostRouteSimulation" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/par/schemOne_timesim.nlf"/>
     <file xil_pn:branch="PostRouteSimulation" xil_pn:fileType="FILE_SDF" xil_pn:name="netgen/par/schemOne_timesim.sdf"/>
@@ -92,7 +89,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="schemOne_pad.csv" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="schemOne_pad.txt" xil_pn:subbranch="Par"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="schemOne_par.xrpt"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="schemOne_schemOne_sch_tb_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="schemOne_schemOne_sch_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="schemOne_schemOne_sch_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="schemOne_schemOne_sch_tb_isim_beh.wdb"/>
     <file xil_pn:branch="PostRouteSimulation" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="schemOne_schemOne_sch_tb_isim_par.exe"/>
@@ -119,22 +116,20 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1619640869" xil_pn:in_ck="-1897149237491023970" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1619640869">
+    <transform xil_pn:end_ts="1622038816" xil_pn:in_ck="855886791770260379" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1622038816">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SawSignal.vhd"/>
-      <outfile xil_pn:name="SawTest2.vhd"/>
       <outfile xil_pn:name="SendChar.vhd"/>
+      <outfile xil_pn:name="VGAscan.vhd"/>
+      <outfile xil_pn:name="VGAtxt48x20.vhd"/>
+      <outfile xil_pn:name="test3.vhd"/>
     </transform>
     <transform xil_pn:end_ts="1619632892" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8903431991103458639" xil_pn:start_ts="1619632892">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1619631977" xil_pn:in_ck="5968942162130716862" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3911774076359743539" xil_pn:start_ts="1619631975">
+    <transform xil_pn:end_ts="1620895435" xil_pn:in_ck="5968942162130716862" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3911774076359743539" xil_pn:start_ts="1620895433">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="schemOne.vhf"/>
@@ -143,26 +138,20 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1619640869" xil_pn:in_ck="-5812546504789310" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1619640869">
+    <transform xil_pn:end_ts="1622038816" xil_pn:in_ck="1391897813540226623" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1622038816">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SawSignal.vhd"/>
-      <outfile xil_pn:name="SawTest2.vhd"/>
       <outfile xil_pn:name="SendChar.vhd"/>
+      <outfile xil_pn:name="VGAscan.vhd"/>
+      <outfile xil_pn:name="VGAtxt48x20.vhd"/>
       <outfile xil_pn:name="schemOne.vhf"/>
+      <outfile xil_pn:name="test3.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1619640874" xil_pn:in_ck="-5812546504789310" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3320771939640688834" xil_pn:start_ts="1619640869">
+    <transform xil_pn:end_ts="1622038824" xil_pn:in_ck="1391897813540226623" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3320771939640688834" xil_pn:start_ts="1622038816">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
@@ -171,10 +160,9 @@
       <outfile xil_pn:name="schemOne_schemOne_sch_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1619640874" xil_pn:in_ck="-7808358128528594211" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3509940057438516693" xil_pn:start_ts="1619640874">
+    <transform xil_pn:end_ts="1622038824" xil_pn:in_ck="-7808358128528594211" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3509940057438516693" xil_pn:start_ts="1622038824">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
@@ -188,6 +176,10 @@
     <transform xil_pn:end_ts="1619684319" xil_pn:in_ck="5968942162130716862" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-5389056461643229862" xil_pn:start_ts="1619684317">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="schemOne.vhf"/>
     </transform>
     <transform xil_pn:end_ts="1619684319" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="8688903516604153063" xil_pn:start_ts="1619684319">
@@ -205,134 +197,118 @@
     <transform xil_pn:end_ts="1619684319" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-3893270297158069842" xil_pn:start_ts="1619684319">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1619684319" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="1023731520205186609" xil_pn:start_ts="1619684319">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1619684435" xil_pn:in_ck="-7239066307315185483" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="197060956729193681" xil_pn:start_ts="1619684426">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name=".lso"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="schemOne.jhd"/>
-      <outfile xil_pn:name="schemOne.lso"/>
-      <outfile xil_pn:name="schemOne.ngc"/>
-      <outfile xil_pn:name="schemOne.ngr"/>
-      <outfile xil_pn:name="schemOne.prj"/>
-      <outfile xil_pn:name="schemOne.stx"/>
-      <outfile xil_pn:name="schemOne.syr"/>
-      <outfile xil_pn:name="schemOne.xst"/>
-      <outfile xil_pn:name="schemOne_schemOne_sch_tb_beh.prj"/>
-      <outfile xil_pn:name="schemOne_schemOne_sch_tb_par.prj"/>
-      <outfile xil_pn:name="schemOne_schemOne_sch_tb_stx_beh.prj"/>
-      <outfile xil_pn:name="schemOne_schemOne_sch_tb_stx_par.prj"/>
-      <outfile xil_pn:name="schemOne_vhdl.prj"/>
-      <outfile xil_pn:name="schemOne_xst.xrpt"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1618425620" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4784894173940435316" xil_pn:start_ts="1618425620">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1619640988" xil_pn:in_ck="5968942162130711544" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-1092064426925170156" xil_pn:start_ts="1619640983">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
-      <outfile xil_pn:name="_ngo"/>
-      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
-      <outfile xil_pn:name="schemOne.bld"/>
-      <outfile xil_pn:name="schemOne.ngd"/>
-      <outfile xil_pn:name="schemOne_ngdbuild.xrpt"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1619640992" xil_pn:in_ck="5968942162130711545" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-5849673150125579957" xil_pn:start_ts="1619640988">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
-      <outfile xil_pn:name="schemOne.pcf"/>
-      <outfile xil_pn:name="schemOne_map.map"/>
-      <outfile xil_pn:name="schemOne_map.mrp"/>
-      <outfile xil_pn:name="schemOne_map.ncd"/>
-      <outfile xil_pn:name="schemOne_map.ngm"/>
-      <outfile xil_pn:name="schemOne_map.xrpt"/>
-      <outfile xil_pn:name="schemOne_summary.xml"/>
-      <outfile xil_pn:name="schemOne_usage.xml"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1619641008" xil_pn:in_ck="-4372754779848878190" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-3872219738485705569" xil_pn:start_ts="1619640992">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
-      <outfile xil_pn:name="schemOne.ncd"/>
-      <outfile xil_pn:name="schemOne.pad"/>
-      <outfile xil_pn:name="schemOne.par"/>
-      <outfile xil_pn:name="schemOne.ptwx"/>
-      <outfile xil_pn:name="schemOne.unroutes"/>
-      <outfile xil_pn:name="schemOne.xpi"/>
-      <outfile xil_pn:name="schemOne_pad.csv"/>
-      <outfile xil_pn:name="schemOne_pad.txt"/>
-      <outfile xil_pn:name="schemOne_par.xrpt"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1619641012" xil_pn:in_ck="5968942162130711413" xil_pn:name="TRAN_postParSimModel" xil_pn:prop_ck="-4479473704478265057" xil_pn:start_ts="1619641008">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <outfile xil_pn:name="netgen"/>
-      <outfile xil_pn:name="netgen/par/schemOne_timesim.nlf"/>
-      <outfile xil_pn:name="netgen/par/schemOne_timesim.sdf"/>
-      <outfile xil_pn:name="netgen/par/schemOne_timesim.vhd"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1619641892" xil_pn:in_ck="6747560143855869438" xil_pn:name="TRAN_copyPost-ParAbstractToPreSimulation" xil_pn:start_ts="1619641892">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <outfile xil_pn:name="SawTest2.vhd"/>
-      <outfile xil_pn:name="netgen/par/schemOne_timesim.sdf"/>
-      <outfile xil_pn:name="netgen/par/schemOne_timesim.vhd"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1619641899" xil_pn:in_ck="2260223834786777032" xil_pn:name="TRAN_ISimulatePostPlace&amp;RouteModelRunFuse" xil_pn:prop_ck="-1009880517993048194" xil_pn:start_ts="1619641892">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="schemOne_schemOne_sch_tb_isim_par.exe"/>
-      <outfile xil_pn:name="schemOne_schemOne_sch_tb_par.prj"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1619679969" xil_pn:in_ck="1798819586788369805" xil_pn:name="TRAN_ISimulatePostPlace&amp;RouteModel" xil_pn:prop_ck="3543374339114996306" xil_pn:start_ts="1619679969">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="schemOne_schemOne_sch_tb_isim_par.wdb"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1619641008" xil_pn:in_ck="5968942162130711413" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1619641005">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
-      <outfile xil_pn:name="schemOne.twr"/>
-      <outfile xil_pn:name="schemOne.twx"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1619640958" xil_pn:in_ck="5968942162130711544" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="-5802528952815340999" xil_pn:start_ts="1619640955">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
-      <outfile xil_pn:name="netgen"/>
-      <outfile xil_pn:name="netgen/synthesis/schemOne_synthesis.nlf"/>
-      <outfile xil_pn:name="netgen/synthesis/schemOne_synthesis.vhd"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
   </transforms>
 

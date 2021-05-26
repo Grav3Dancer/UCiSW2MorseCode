@@ -26,18 +26,17 @@ entity SendChar is
           CLK        : in    std_logic; 
           SendStart  : in    std_logic; 
           CharOutput : out   std_logic; 
-          SendBusy   : out   std_logic);
+          SendBusy   : out   std_logic;
+			 CharOutputVector : out	std_logic_vector (7 downto 0);
+			 CharOut		: out	std_logic);
 end SendChar;
 
 architecture BEHAVIORAL of SendChar is
 --
-type state_type is (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, Non);
+signal symbolLen : UNSIGNED(4 downto 0) := "00000";
+signal symbolCode : STD_LOGIC_VECTOR (21 downto 0) := "0000000000000000000000";
 
-signal symbolState : state_type;
-signal symbolLen : UNSIGNED(3 downto 0) := "0000";
-signal symbolCode : STD_LOGIC_VECTOR (14 downto 0) := "000000000000000";
-
-signal symbolCount : UNSIGNED(3 downto 0) := "1110";
+signal symbolCount : UNSIGNED(4 downto 0) := "10101";
 signal unitCount : UNSIGNED(23 downto 0) := "000000000000000000000000";
 
 signal sendOut : STD_LOGIC := '0';
@@ -53,115 +52,118 @@ begin
 	if (rising_edge(CLK)) then
 	if SendStart = '1' then
 		symbol <= CharInput;
-		case symbol is
-			when "01100001" =>
-					symbolState <= A;
-					symbolLen <= "0110";
-					symbolCode <= "101110000000000";
-			when "01100010" =>
-					symbolState <= B;
-					symbolLen <= "1010";
-					symbolCode <= "111010101000000";
-			when "01100011" =>
-					symbolState <= C;
-					symbolLen <= "1100";
-					symbolCode <= "111010111010000";
-			when "01100100" =>
-					symbolState <= D;
-					symbolLen <= "1000";
-					symbolCode <= "111010100000000";
-			when "01100101" =>
-					symbolState <= E;
-					symbolLen <= "0010";
-					symbolCode <= "100000000000000";
-			when "01100110" =>
-					symbolState <= F;
-					symbolLen <= "1010";
-					symbolCode <= "101011101000000";
-			when "01100111" =>
-					symbolState <= G;
-					symbolLen <= "1010";
-					symbolCode <= "111011101000000";
-			when "01101000" =>
-					symbolState <= H;
-					symbolLen <= "1000";
-					symbolCode <= "101010100000000";
-			when "01101001" =>
-					symbolState <= I;
-					symbolLen <= "0100";
-					symbolCode <= "101000000000000";
-			when "01101010" =>
-					symbolState <= J;
-					symbolLen <= "1110";
-					symbolCode <= "101110111011100";
-			when "01101011" =>
-					symbolState <= K;
-					symbolLen <= "1010";
-					symbolCode <= "111010111000000";
-			when "01101100" =>
-					symbolState <= L;
-					symbolLen <= "1010";
-					symbolCode <= "101110101000000";
-			when "01101101" =>
-					symbolState <= M;
-					symbolLen <= "1000";
-					symbolCode <= "111011100000000";
-			when "01101110" =>
-					symbolState <= N;
-					symbolLen <= "0110";
-					symbolCode <= "111010000000000";
-			when "01101111" =>
-					symbolState <= O;
-					symbolLen <= "1100";
-					symbolCode <= "111011101110000";
-			when "01110000" =>
-					symbolState <= P;
-					symbolLen <= "1100";
-					symbolCode <= "101110111010000";
-			when "01110001" =>
-					symbolState <= Q;
-					symbolLen <= "1110";
-					symbolCode <= "111011101011100";
-			when "01110010" =>
-					symbolState <= R;
-					symbolLen <= "1000";
-					symbolCode <= "101110100000000";
-			when "01110011" =>
-					symbolState <= S;
-					symbolLen <= "0110";
-					symbolCode <= "101010000000000";
-			when "01110100" =>
-					symbolState <= T;
-					symbolLen <= "0100";
-					symbolCode <= "111000000000000";
-			when "01110101" =>
-					symbolState <= U;
-					symbolLen <= "1000";
-					symbolCode <= "101011100000000";
-			when "01110110" =>
-					symbolState <= V;
-					symbolLen <= "1010";
-					symbolCode <= "101010111000000";
-			when "01110111" =>
-					symbolState <= W;
-					symbolLen <= "1010";
-					symbolCode <= "101110111000000";
-			when "01111000" =>
-					symbolState <= X;
-					symbolLen <= "1100";
-					symbolCode <= "111010101110000";
-			when "01111001" =>
-					symbolState <= Y;
-					symbolLen <= "1110";
-					symbolCode <= "111010111011100";
-			when "01111010" =>
-					symbolState <= Z;
-					symbolLen <= "1100";
-					symbolCode <= "111011101010000";
-			when others =>
-					symbolState <= Non;
-					symbolLen <= "0000";
-					symbolCode <= "000000000000000";
+		case CharInput is
+			when "01100001" => --A
+					symbolLen <= "00110";
+					symbolCode <= "1011100000000000000000";
+			when "01100010" => --B
+					symbolLen <= "01010";
+					symbolCode <= "1110101010000000000000";
+			when "01100011" => --C
+					symbolLen <= "01100";
+					symbolCode <= "1110101110100000000000";
+			when "01100100" => --D
+					symbolLen <= "01000";
+					symbolCode <= "1110101000000000000000";
+			when "01100101" => --E
+					symbolLen <= "00010";
+					symbolCode <= "1000000000000000000000";
+			when "01100110" => --F
+					symbolLen <= "01010";
+					symbolCode <= "1010111010000000000000";
+			when "01100111" => --G
+					symbolLen <= "01010";
+					symbolCode <= "1110111010000000000000";
+			when "01101000" => --H
+					symbolLen <= "01000";
+					symbolCode <= "1010101000000000000000";
+			when "01101001" => --I
+					symbolLen <= "00100";
+					symbolCode <= "1010000000000000000000";
+			when "01101010" => --J
+					symbolLen <= "01110";
+					symbolCode <= "1011101110111000000000";
+			when "01101011" => --K
+					symbolLen <= "01010";
+					symbolCode <= "1110101110000000000000";
+			when "01101100" => --L
+					symbolLen <= "01010";
+					symbolCode <= "1011101010000000000000";
+			when "01101101" => --M
+					symbolLen <= "01000";
+					symbolCode <= "1110111000000000000000";
+			when "01101110" => --N
+					symbolLen <= "00110";
+					symbolCode <= "1110100000000000000000";
+			when "01101111" => --O
+					symbolLen <= "01100";
+					symbolCode <= "1110111011100000000000";
+			when "01110000" => --P
+					symbolLen <= "01100";
+					symbolCode <= "1011101110100000000000";
+			when "01110001" => --Q
+					symbolLen <= "01110";
+					symbolCode <= "1110111010111000000000";
+			when "01110010" => --R
+					symbolLen <= "01000";
+					symbolCode <= "1011101000000000000000";
+			when "01110011" => --S
+					symbolLen <= "00110";
+					symbolCode <= "1010100000000000000000";
+			when "01110100" => --T
+					symbolLen <= "00100";
+					symbolCode <= "1110000000000000000000";
+			when "01110101" => --U
+					symbolLen <= "01000";
+					symbolCode <= "1010111000000000000000";
+			when "01110110" => --V
+					symbolLen <= "01010";
+					symbolCode <= "1010101110000000000000";
+			when "01110111" => --W
+					symbolLen <= "01010";
+					symbolCode <= "1011101110000000000000";
+			when "01111000" => --X
+					symbolLen <= "01100";
+					symbolCode <= "1110101011100000000000";
+			when "01111001" => --Y
+					symbolLen <= "01110";
+					symbolCode <= "1110101110111000000000";
+			when "01111010" => --Z
+					symbolLen <= "01100";
+					symbolCode <= "1110111010100000000000";
+			when "00110000" => --0
+					symbolLen <= "10100";
+					symbolCode <= "1110111011101110111000";
+			when "00110001" => --1
+					symbolLen <= "10010";
+					symbolCode <= "1011101110111011100000";
+			when "00110010" => --2
+					symbolLen <= "10000";
+					symbolCode <= "1010111011101110000000";
+			when "00110011" => --3
+					symbolLen <= "01110";
+					symbolCode <= "1010101110111000000000";
+			when "00110100" => --4
+					symbolLen <= "01100";
+					symbolCode <= "1010101011100000000000";
+			when "00110101" => --5
+					symbolLen <= "01010";
+					symbolCode <= "1010101010000000000000";
+			when "00110110" => --6
+					symbolLen <= "01100";
+					symbolCode <= "1110101010100000000000";
+			when "00110111" => --7
+					symbolLen <= "01110";
+					symbolCode <= "1110111010101000000000";
+			when "00111000" => --8
+					symbolLen <= "10000";
+					symbolCode <= "1110111011101010000000";
+			when "00111001" => --9
+					symbolLen <= "10010";
+					symbolCode <= "1110111011101110100000";
+			when others => --Nie wiadomo co
+					symbolLen <= "00000";
+					symbolCode <= "0000000000000000000000";
 		end case;
 		
 		sending <= '1';
@@ -177,28 +179,52 @@ begin
 		if ending = '0' then -- bez tego nie dzia³a ?
 		sendOut <= symbolCode(to_integer(symbolCount));
 		end if;
+		
+--		if (unitCount = 1) and (symbolCount = 21) then
+--			CharOut <= '1';
+--		else
+--			CharOut <= '0';
+--		end if;
+		
+		if (unitCount = 1) then
+			if (symbolCount = 21) then
+				CharOutputVector <= symbol;
+				CharOut <= '1';
+			elsif ((symbolCount = 20) and (symbolCode(20) = '0')) then
+				CharOutputVector <= "00101110"; --kropka
+				CharOut <= '1';
+			elsif ((symbolCount < 20) and (symbolCode(to_integer(symbolCount)) = '0')) then --koniec znaku ( . lub - )
+				if (symbolCode(to_integer(symbolCount)+1) = '1') and (symbolCode(to_integer(symbolCount)+2) = '1') then
+					CharOutputVector <= "00101101"; --kreska
+					CharOut <= '1';
+				elsif (symbolCode(to_integer(symbolCount)+1) = '1') and (symbolCode(to_integer(symbolCount)+2) = '0') then
+					CharOutputVector <= "00101110"; --kropka
+					CharOut <= '1';
+				end if;
+			end if;
+			
+		else
+			CharOut <= '0';
+		end if;
+		
 		unitCount <= unitCount + 1;
 		ending <= '0';
 		if unitCount = 100 then --10000000
 			symbolCount <= symbolCount - 1;
 			unitCount <= "000000000000000000000000";
-			if (to_integer(symbolCount) = (14-to_integer(symbolLen)+1)) then
+			if (to_integer(symbolCount) = (21-to_integer(symbolLen))+1) then
 				sendOut <= '0';
-				symbolCount <= "1110";
+				CharOut <= '0';
+				symbolCount <= "10101";
 				ending <= '1';
 				
 			end if;
 		end if;
 	end if;
-	
-	
-
 end process send_process;
 
 
-
-
-
+--CharOutputVector <= symbol;
 SendBusy <= sending;
 CharOutput <= sendOut;
 
